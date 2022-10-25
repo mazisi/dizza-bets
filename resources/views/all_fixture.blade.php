@@ -49,7 +49,7 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="color: #000">
                                     <tr style="color: #000">
                                         <th scope="row">01</th>
                                         <td>
@@ -59,7 +59,6 @@
                                             Kaizer Chiefs
                                         </td>
                                         <td>2022-09-09</td>
-                                        <td>2</td>
                                         <td>
                                             Upcoming
                                         </td>
