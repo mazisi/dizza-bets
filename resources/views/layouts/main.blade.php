@@ -14,12 +14,23 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugin/nice-select.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/plugin/nice-select.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/arafat-font.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <style>
+        input, textarea {
+            padding: 0px 20px;
+            width: 100%;
+            font-family: var(--body-font);
+            height: 35px;
+            background: #ffffff;
+            border: 1px solid #120f54;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,7 +64,7 @@
     <script src="{{ asset('assets/js/plugin/waypoint.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugin/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugin/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugin/plugin.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/plugin/plugin.js') }}"></script> --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 

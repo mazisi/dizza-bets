@@ -185,8 +185,9 @@
                                                                 </div></td>
                                                                 <td>
                                                                     <div class="head-div">
-                                                                        <h5>England</h5>
-                                                                        <h5>Premier League</h5>
+                                                                        
+                                                                        <h6>England</h6>
+                                                                        <h6>Premier League</h6>
 
                                                                         
                                                                     </div>
@@ -205,44 +206,31 @@
                                                          
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                               
-                                                                <td><div class="time">20:30</div></td>
-                                                                <td>
-                                                                    <div class="location-div">
-                                                                        <h5>AFC Bournemouth</h5>
-                                                                        <h5>Southampton</h5>
 
-                                                                        
+                                                            @forelse ($pools as $pool)
+                                                            <tr>                                                               
+                                                                <td>
+                                                                    <div class="time">
+                                                                        <img
+                                                                        style="width: 20%" src="https://www.soccer6.co.za/resources/images/TABONLINE-New4R-BUTTON.png"/>
                                                                     </div>
                                                                 </td>
-                                                                
+                                                                <td>
+                                                                    <div class="location-div">
+                                                                        <div style="color: #bababa; text-align: left;">South AFrica</div>
+                                                                        <h5><a style="color: #000;" href="{{ route('view_pool_data',$pool->id) }}">{{ $pool->name }}</a>  </h5>                                                                    
+                                                                    </div>
+                                                                </td>                                                                
                                                                 <td>
                                                                     <div class="icon-div">
                                                                         <i class="far fa-bell"></i>
                                                                     </div>
                                                                 </td>
                                                             </tr>
-
-                                                             <tr>
-                                                               
-                                                                <td><div class="time">21:30</div></td>
-                                                                <td>
-                                                                    <div class="location-div">
-                                                                        <h5>Brentford</h5>
-                                                                        <h5>Southampton</h5>
-
-                                                                        
-                                                                    </div>
-                                                                </td>
-                                                                
-                                                                <td>
-                                                                    <div class="icon-div">
-                                                                        <i class="far fa-bell"></i>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                         
+                                                            @empty
+                                                                Empty
+                                                            @endforelse
+                                                            
                                                          
                                                         </tbody>
                                                     </table>

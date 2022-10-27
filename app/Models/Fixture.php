@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pool extends Model
+class Fixture extends Model
 {
     use HasFactory;
     public $guarded = [];
 
-    public function fixtures()
+    public function pool()
     {
-        return $this->hasMany(Fixture::class,'pool_id');
+        return $this->belongsTo(Pool::class);
     }
 }

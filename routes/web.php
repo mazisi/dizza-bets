@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FixtureController;
 use App\Http\Controllers\DashboardController;
 
@@ -15,8 +16,7 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index']);
+Route::get('/view-pool-data/{id}', [HomeController::class,'view_pool_data'])->name('view_pool_data');
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/fixtures/{id}',[FixtureController::class,'fixtures'])->name('fixtures');
