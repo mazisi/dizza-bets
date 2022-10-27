@@ -18,8 +18,12 @@
                 </thead>
                 <tbody>
                   @forelse ($fixtures as $fixture)
+
+@php
+ $getMSeries = App\Http\Controllers\HomeController::getMSeries($fixture["data"]['id']);
+@endphp
                       <tr class="text-dark">
-                        <th scope="row">M1</th>
+                        <th scope="row">{{ $getMSeries }}</th>
                         <td>
                           <div>{{ $fixture["data"]["localTeam"]["data"]["name"] }}</div>
                          
@@ -31,7 +35,7 @@
                         </td>
                         <td>
                         <div> 18:45</div>
-                        <div>View H2H</div>
+                        <a href="">View H2H</a>
                         </td>
                         <td>
                           <div>FC Porto</div>

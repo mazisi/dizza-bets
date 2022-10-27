@@ -28,4 +28,8 @@ class HomeController extends Controller
         
        return view('view_pool_fixture',['fixtures' => $fixtures, 'pool' => $pool]);
     }
+
+    public static function getMSeries($fixture_id){
+        return 122;
+    }
 }
