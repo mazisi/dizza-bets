@@ -35,10 +35,10 @@
                         </td>
                         <td>
                         <div> 18:45</div>
-                        <a href="">View H2H</a>
+                        <a href="{{ route('view_head_to_head',$fixture->id) }}">View H2H</a>
                         </td>
                         <td>
-                          <div>FC Porto</div>
+                          <div>{{ $fixture["data"]["visitorTeam"]["data"]["name"] }}</div>
                           <div>
                             <span class="badge rounded-pill bg-danger">L</span>
                             <span class="badge rounded-pill bg-success">W</span>

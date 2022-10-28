@@ -30,6 +30,7 @@ class HomeController extends Controller
     }
 
     public static function getMSeries($fixture_id){
-        return 122;
+        $fix = Fixture::where('fixture_id',$fixture_id)->first();
+        return $fix->m_series;
     }
 }

@@ -4,14 +4,15 @@ namespace App\Http\Livewire;
 
 use App\Models\Fixture;
 use App\Models\Pool;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class Poool extends Component
 {
     public $pool_id = '';
     public $pool_name = '';
-    public $fixture_id = null;
-    public $m_series = null;
+    public $fixture_id = '';
+    public $m_series = '';
 
     public function getPoolId($pool_id){
        $getPool = Pool::find($pool_id)->first();

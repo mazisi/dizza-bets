@@ -42,20 +42,21 @@
                         <input wire:model='pool_id' type="hidden">
                         <div class="col-12">
                             <div class="single-input mb-3">
-                                <input wire:model.defer='pool_name' type="text" id="logemail" disabled>
+                                <input wire:model='pool_name' type="text" id="logemail" disabled>
                             </div>
                         </div>
 
                       <div class="col-12">
                         <div class="single-input mb-3">
-                            <input wire:model.defer='fixture_id' type="text" id="logemail" placeholder="Paste Fixture ID">
+                            <input wire:model.lazy='fixture_id' type="text" id="logemail" placeholder="Paste Fixture ID">
                         </div>
                         </div>
 
                     <div class="col-12 w-100">
                         <div class="st">
                             <label>Select M-Group</label>
-                            <select wire:model.defer='m_series'>
+                            <select wire:model.lazy='m_series'>
+                                <option disabled>Choose</option>
                                 <option value="M1">M1</option>
                                 <option value="M2">M2</option>
                                 <option value="M3">M3</option>
