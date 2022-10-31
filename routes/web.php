@@ -18,5 +18,6 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class,'index']);
 Route::get('/view-pool-data/{id}', [HomeController::class,'view_pool_data'])->name('view_pool_data');
+Route::get('/head-to-head/{id}', [HomeController::class,'view_head_to_head'])->name('view_head_to_head');
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/fixtures/{id}',[FixtureController::class,'fixtures'])->name('fixtures');

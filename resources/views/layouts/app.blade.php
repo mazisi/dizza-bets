@@ -22,6 +22,10 @@
     <style>
         .badge {
     font-size: .6em;
+}
+a, a:focus, a:hover {
+    color: #000;
+}
     </style>
 </head>
 #001e28
@@ -50,7 +54,7 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
                            <form action="#">
                             <div class="form-group d-flex align-items-center">
-                                <input type="text" placeholder="Enter your email Address">
+                                <input type="text" placeholder="Search">
                                 
                             </div>
                         </form>

@@ -35,7 +35,7 @@
                         </td>
                         <td>
                         <div> 18:45</div>
-                        <a href="{{ route('view_head_to_head',$fixture->id) }}">View H2H</a>
+                        <a href="{{ route('view_head_to_head',$fixture["data"]["id"]) }}">View H2H</a>
                         </td>
                         <td>
                           <div>{{ $fixture["data"]["visitorTeam"]["data"]["name"] }}</div>

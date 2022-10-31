@@ -29,21 +29,26 @@
                 </div>
             </div>
         </div>
+        <style>
+          li, p {
+    color: #000;
+}
+        </style>
         <div class="container">
             <div class="row justify-content-center" style="background: #fff; height: 150vh; padding-top: 20px; border-radius: 20px;">
-                
+               
                 <div class="col-xl-9 col-lg-8">
                    <div class="container d-flex col-12">
                     <div class="col-3 border "> 
-                      <img class="text-center mx-5 w-12" width="100" height="59" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt="">
-                       <p class="text-center">liverpool</p>
+                      <img class="text-center mx-5 w-12" width="100" height="59" src="{{ $head_to_head["data"][0]["visitorTeam"]["data"]["logo_path"] }}" alt="">
+                       <p class="text-center">{{ $head_to_head["data"][0]["visitorTeam"]["data"]["name"] }}</p>
                     </div>
                     <div class="col-5 mx-5">
-                      <p class="text-center">19.10.2022 20.30</p>
+                      <p class="text-center">{{ $pool->pool->name }}</p>
                     </div>
                     <div class="col-3 border ">
-                      <img class="mx-5"width="100" height="59" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt="">
-                      <p class="text-center">liverpool</p>
+                      <img class="mx-5"width="100" height="59" src="{{ $head_to_head["data"][0]["localTeam"]["data"]["logo_path"] }}" alt="">
+                      <p class="text-center">{{ $head_to_head["data"][0]["localTeam"]["data"]["name"] }}</p>
                     </div>
                    </div>
 
@@ -52,7 +57,7 @@
                       <li class="nav-item" role="presentation">
                         <button class="nav-link bg-white text-dark" id="deposit-tab" data-bs-toggle="tab"
                             data-bs-target="#deposit" type="button" role="tab" aria-controls="deposit"
-                            aria-selected="false">SUMMURY</button>
+                            aria-selected="false">SUMMARY</button>
                     </li>
                     <li class="nav-item" role="presentation">
                       <button class="nav-link  bg-white text-dark" id="deposit-tab" data-bs-toggle="tab"
@@ -86,7 +91,7 @@
                   </div>
 
                   <div class="bg-secondary col-12 P-5">
-                    <p>LAST MATCHES-LIVERPOOL</p>
+                    <p>Head To Head</p>
                   </div> 
                   
                   <div class="table-responsive">
@@ -95,88 +100,41 @@
                          
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><div class="time">16.12.2022</div></td>
-                                <td>
-                                    <div class="location">
-                                        <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt=""> Liverpool</P>
-                                        <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/sco/e/eb/Manchester_City_FC_badge.svg" alt=""> Manchester City</P> 
-                                    </div>
-                                </td>
-                                <td>
-                                  <div>
-                                    <P> 1</P>
-                                    <P> 0</P>
-                                  </div>
-                              </td>
-                                <td>
-                                    <div >
-                                      <button type="button" class="btn btn-success">W</button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                             <tr>
-                                <td><div class="time">16.12.2022</div></td>
-                                <td>
-                                    <div class="location">
-                                      <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Rangers_FC.svg/1200px-Rangers_FC.svg.png" alt=""> Rangers</P>
-                                      <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt=""> Liverpool</P>
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <div class="icon">
-                                      <P> 1</P>
-                                      <P> 7</P>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="icon">
-                                      <button type="button" class="btn btn-success">W</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                              <td><div class="time">16.12.2022</div></td>
-                              <td>
-                                  <div class="location">
-                                      <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" alt=""> Asenal</P>
-                                      <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt=""> Liverpool</P> 
-                                  </div>
-                              </td>
-                              <td>
-                                <div class="icon">
-                                  <P> 3</P>
-                                  <P> 2</P>
-                                </div>
-                            </td>
-                              <td>
-                                  <div class="icon">
-                                    <button type="button" class="btn btn-danger">L</button>
-                                  </div>
-                              </td>
-                          </tr>
+                          
+                          @forelse ($head_to_head["data"] as $head)
                           <tr>
-                            <td><div class="time">16.12.2022</div></td>
+                            <td><div class="time">{{ date('d-m-Y', strtotime($head["time"]["starting_at"]["date_time"])) }}</div></td>
                             <td>
                                 <div class="location">
-                                    <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" alt=""> Liverpool</P>
-                                    <P>  <img class="m-7"width="15" height="10" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Rangers_FC.svg/1200px-Rangers_FC.svg.png" alt=""> Rangers</P>
+                                    <P>  <img class="m-7"width="15" height="10" src="" alt="">{{$head["localTeam"]["data"]["name"]}}</P>
+                                    <P>  <img class="m-7"width="15" height="10" src="" alt="">{{$head["visitorTeam"]["data"]["name"]}}</P> 
                                 </div>
                             </td>
                             <td>
-                              <div class="icon">
-                                <P> 2</P>
-                                <P> 0</P>
+                              <div>
+                                <P>{{$head["scores"]["localteam_score"] }}</P>
+                                <P> {{$head["scores"]["visitorteam_score"]}}</P>
                               </div>
                           </td>
                             <td>
-                                <div class="icon">
-                                  <button type="button" class="btn btn-success">W</button>
+                                <div>
+                                  @if (is_null($head["winner_team_id"]))
+                                  <button type="button" class="btn btn-warning">D</button>  
+                                  @elseif ($head["winner_team_id"] == $head["localteam_id"])
+                                  <button type="button" class="btn btn-success">W</button>  
+                                  @else
+                                  <button type="button" class="btn btn-danger">L</button>   
+                                  @endif
+                                  
                                 </div>
                             </td>
                         </tr>
+                          @empty
+                              
+                          @endforelse
+                           
+
+                            
                         
                         </tbody>
                     </table>
